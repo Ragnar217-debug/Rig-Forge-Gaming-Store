@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  HEAD SECTION
+  Contains information about the website.
+  This information is mostly used by browsers,
+  search engines and external resources.
+-->
+
+<head>
+
+  <!-- Defines the character encoding so text displays correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the website responsive on phones, tablets and computers -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Sets the browser theme colour to match the website -->
+  <meta name="theme-color" content="#070b09">
+
+  <!-- Describes the website for search engines -->
+  <meta name="description" content="RIG-FORGE - Premium gaming PCs, peripherals, monitors and gaming accessories.">
+
+  <!-- The title displayed on the browser tab -->
+  <title>RIG-FORGE | Premium Gaming Gear</title>
+
+
+  <!-- GOOGLE FONTS
+       Connects to Google Fonts to load the Inter font.
+       Different font weights are included for headings and text.
+  -->
+
+  <!-- Establishes an early connection to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- Establishes an early secure connection to the font server -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Imports the Inter font in different font weights -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+  <!-- CSS STYLESHEET
+       Connects this HTML file to style.css.
+       The CSS controls colours, layouts, sizes,
+       animations and the overall appearance.
+  -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<!--
+  BODY SECTION
+  Everything inside the body is displayed on the website.
+-->
+
+<body>
+
+
+  <!-- =====================================
+       NAVIGATION BAR
+       Contains the website logo, navigation
+       links and shopping cart counter.
+  ====================================== -->
+
+  <header>
+
+    <!-- wrap keeps the content centred.
+         nav arranges the logo, links and cart horizontally. -->
+
+    <div class="wrap nav">
+
+      <!-- Website logo.
+           Clicking it takes the customer back to the homepage. -->
+
+      <a class="brand" href="#home">
+        RIG<span>-</span>FORGE
+      </a>
+
+
+      <!-- NAVIGATION LINKS
+           These links take customers to different
+           sections of the same webpage.
+      -->
+
+      <nav class="navlinks" aria-label="Main navigation">
+
+        <!-- Takes the customer to the homepage -->
+        <a href="#home">Home</a>
+
+        <!-- Takes the customer to the product section -->
+        <a href="#shop" id="buy">Shop</a>
+
+        <!-- Takes the customer to the category section -->
+        <a href="#categories">Categories</a>
+
+        <!-- Takes the customer to the About section -->
+        <a href="#about">Why Rig-Forge</a>
+
+      </nav>
+
+
+      <!-- SHOPPING CART LINK
+           The number inside the span is updated
+           by JavaScript when products are added.
+      -->
+
+      <a class="cart" href="#cart">
+
+        CART ·
+
+        <!-- JavaScript updates this number -->
+        <span id="count">0</span>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================
+       MAIN CONTENT
+       Contains all the main sections of
+       the Rig-Forge gaming store.
+  ====================================== -->
+
+  <main>
+
+
+    <!-- =====================================
+         HERO SECTION
+         This is the first section customers
+         see when they open the website.
+         It contains the main heading, description,
+         buttons and gaming setup image.
+    ====================================== -->
+
+    <section class="wrap hero" id="home">
+
+      <div class="hero-content">
+
+
+        <!-- Small introductory heading above the main title -->
+
+        <div class="eyebrow">
+          BUILT FOR THE NEXT LEVEL
+        </div>
+
+
+        <!-- Main website heading.
+             The br tag moves GAME ON to a new line.
+             The em tag highlights the text in green
+             through the CSS stylesheet.
+        -->
+
+        <h1>
+          GEAR UP.<br>
+          <em>GAME ON.</em>
+        </h1>
+
+
+        <!-- Short description introducing the store -->
+
+        <p>
+          Level up your setup with gaming essentials
+          chosen for performance, comfort and style.
+          Find your edge at RIG-FORGE.
+        </p>
+
+
+        <!-- HERO BUTTONS
+             These buttons guide customers to
+             the shop and category sections.
+        -->
+
+        <div class="actions">
+
+          <!-- Takes customers directly to the products -->
+          <a class="btn" href="#shop">
+            Shop gaming gear
+          </a>
+
+          <!-- Takes customers to the category filters -->
+          <a class="btn secondary" href="#categories">
+            Explore categories
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO IMAGE
+           Displays the main gaming setup photograph.
+           The image is hosted externally by Unsplash.
+      -->
+
+      <div class="heroimg">
+
+        <img
+          src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85"
+
+          <!-- Alternative text describes the image
+               for accessibility and when the image fails to load. -->
+
+          alt="Premium gaming computer setup"
+
+          <!-- Gives the hero image high loading priority -->
+          fetchpriority="high"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CATEGORY SECTION
+         Allows customers to filter products
+         according to their gaming interests.
+    ====================================== -->
+
+    <section class="wrap section" id="categories">
+
+
+      <!-- Category section heading -->
+
+      <div class="sectionhead">
+
+        <div>
+
+          <!-- Small green introductory text -->
+          <div class="eyebrow">FIND YOUR LOADOUT</div>
+
+          <!-- Main category heading -->
+          <h2>Shop by category</h2>
+
+          <!-- Explains what customers can find -->
+          <p>
+            Everything you need to build your battle station.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CATEGORY FILTER BUTTONS
+           Each button has a data-cat attribute.
+           JavaScript reads this attribute to determine
+           which products should be displayed.
+      -->
+
+      <div class="filters" id="filters">
+
+
+        <!-- Displays every product -->
+        <button class="filter active" data-cat="All" type="button">
+          All Gear
+        </button>
+
+
+        <!-- Displays computers and monitors -->
+        <button class="filter" data-cat="PC & Displays" type="button">
+          PC & Displays
+        </button>
+
+
+        <!-- Displays keyboards, mice and controllers -->
+        <button class="filter" data-cat="Peripherals" type="button">
+          Peripherals
+        </button>
+
+
+        <!-- Displays gaming audio products -->
+        <button class="filter" data-cat="Audio" type="button">
+          Audio
+        </button>
+
+
+        <!-- Displays chairs, desks and setup accessories -->
+        <button class="filter" data-cat="Setup" type="button">
+          Setup
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PRODUCTS SECTION
+         Displays the products available for sale.
+         JavaScript automatically inserts the products
+         into the products container.
+    ====================================== -->
+
+    <section class="wrap section" id="shop" style="padding-top:0">
+
+
+      <!-- PRODUCT SECTION HEADING AND SEARCH BAR -->
+
+      <div class="sectionhead">
+
+        <div>
+
+          <!-- Small introductory heading -->
+          <div class="eyebrow">THE GEAR SHELF</div>
+
+          <!-- Main product heading -->
+          <h2>Featured gaming gear</h2>
+
+          <!-- Short description of the product section -->
+          <p>
+            Browse the essentials and add your picks to the cart.
+          </p>
+
+        </div>
+
+
+        <!-- SEARCH BAR
+             Customers can type product names here.
+             JavaScript reads the input and filters products
+             to display matching results.
+        -->
+
+        <input
+          class="search"
+          type="search"
+          id="search"
+          placeholder="Search gaming gear..."
+          aria-label="Search products"
+        >
+
+      </div>
+
+
+      <!-- PRODUCT DISPLAY CONTAINER
+
+           JavaScript uses this div to insert product cards.
+
+           The id="products" is important because
+           JavaScript uses it to locate this element.
+
+           aria-live="polite" helps screen readers
+           announce changes when products are filtered.
+      -->
+
+      <div class="grid" id="products" aria-live="polite">
+
+        <!-- Temporary message shown before products load -->
+        <p>Loading gaming gear...</p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         ABOUT SECTION
+         Explains what makes Rig-Forge different.
+         Contains three feature cards.
+    ====================================== -->
+
+    <section class="wrap section" id="about">
+
+
+      <!-- Small introductory heading -->
+      <div class="eyebrow">
+        THE RIG-FORGE STANDARD
+      </div>
+
+
+      <!-- Main About heading -->
+      <h2>Made for serious play.</h2>
+
+
+      <!-- FEATURES GRID
+           Contains three separate cards explaining
+           the benefits of shopping at Rig-Forge.
+      -->
+
+      <div class="features">
+
+
+        <!-- FIRST FEATURE CARD -->
+
+        <div class="feature">
+
+          <b>Performance first</b>
+
+          <p>
+            Gear selected around speed,
+            precision and dependable play.
+          </p>
+
+        </div>
+
+
+        <!-- SECOND FEATURE CARD -->
+
+        <div class="feature">
+
+          <b>Build your setup</b>
+
+          <p>
+            Mix and match essentials to create
+            a station that feels yours.
+          </p>
+
+        </div>
+
+
+        <!-- THIRD FEATURE CARD -->
+
+        <div class="feature">
+
+          <b>Ready to level up</b>
+
+          <p>
+            A focused gaming store experience
+            that makes finding gear simple.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         SHOPPING CART SECTION
+
+         Displays the customer's selected products,
+         shopping total and checkout button.
+
+         JavaScript must update these elements
+         for the cart to function correctly.
+    ====================================== -->
+
+    <section class="wrap section" id="cart">
+
+
+      <!-- Cart section heading -->
+      <div class="eyebrow">YOUR LOADOUT</div>
+
+      <h2>Your shopping cart</h2>
+
+
+      <!-- Short cart introduction -->
+      <p>
+        Your selected gaming gear will be ready here.
+      </p>
+
+
+      <!-- CART ITEMS CONTAINER
+
+           JavaScript will insert the products
+           selected by the customer into this area.
+
+           It initially displays an empty cart message.
+      -->
+
+      <div id="cart-items" class="cart-items">
+
+        <p>Your cart is currently empty.</p>
+
+      </div>
+
+
+      <!-- CART SUMMARY
+
+           Shows the total cost of all products
+           currently selected by the customer.
+      -->
+
+      <div class="cart-summary">
+
+        <h3>
+
+          Total:
+
+          <!-- JavaScript updates the total price here -->
+          <span id="cart-total">KSh 0</span>
+
+        </h3>
+
+
+        <!-- CHECKOUT BUTTON
+
+             This button is intended to start the checkout process.
+             JavaScript needs to connect an event listener
+             to the checkout-btn ID.
+        -->
+
+        <button class="btn" id="checkout-btn" type="button">
+          Proceed to checkout
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =====================================
+       FOOTER SECTION
+       Appears at the bottom of the website.
+       Contains the brand, copyright and store description.
+  ====================================== -->
+
+  <footer>
+
+    <div class="wrap foot">
+
+
+      <!-- Footer logo -->
+      <div class="brand">
+        RIG<span>-</span>FORGE
+      </div>
+
+
+      <!-- Copyright information -->
+      <div>
+        © 2026 RIG-FORGE · Gear up. Game on.
+      </div>
+
+
+      <!-- Short store description -->
+      <div>
+        Premium Gaming Gear
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================
+       FLOATING SHOPPING CART
+
+       This cart button stays visible near the
+       bottom-right corner of the screen.
+
+       Clicking it takes the customer to the
+       shopping cart section.
+  ====================================== -->
+
+  <a href="#cart" class="cartpanel" aria-label="View shopping cart">
+
+    CART:
+
+    <!-- JavaScript updates this number
+         whenever the customer adds a product. -->
+
+    <span id="cartcount">0</span>
+
+    ITEMS
+
+  </a>
+
+
+
+  <!-- =====================================
+       JAVASCRIPT CONNECTION
+
+       Loads the main.js file.
+
+       The defer attribute tells the browser
+       to download the JavaScript while reading
+       the HTML, but execute it after the HTML
+       has been fully parsed.
+
+       JavaScript controls product rendering,
+       search, category filters and cart functions.
+  ====================================== -->
+
+  <script src="main.js" defer></script>
+
+
+</body>
+
+</html>
